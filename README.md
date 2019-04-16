@@ -38,5 +38,3 @@ To setup the project for review do the following:
 ### POST Block Endpoint
 	* URL
 		* `http://localhost:8000/block`
-
-
