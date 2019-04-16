@@ -47,7 +47,7 @@ Example: http://localhost:8000/block/0
 
 * Error
   * Status Code  
-    `500`
+    `404`
   * Error Response  
 
   ```
@@ -91,7 +91,7 @@ Example: http://localhost:8000/block/0
 
 * Error
   * Status Code  
-    `500`
+    `404`
   * Error Response  
 
   ```

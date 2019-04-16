@@ -43,8 +43,8 @@ class BlockController {
         const block = await blockchain.getBlock(req.params.blockheight);
         if(block === undefined) {
           // res.setHeader("Content-Type", "application/json");
-          res.status(500).json({
-            "status": 500,
+          res.status(404).json({
+            "status": 404,
             "message": "Block does not exist!"
           });
         } else {
@@ -73,8 +73,8 @@ class BlockController {
           try {
             // Check req Validation
             if(req.body.body === '' || req.body.body === undefined) {
-              res.status(500).json({
-                "status": 500,
+              res.status(404).json({
+                "status": 404,
                 "message": "Please fill the body parameter!!"
               })
             } else {
