@@ -30,7 +30,7 @@ Example: http://localhost:8000/block/0
   * Status Code
     `200`
 
-  * Example GET Response
+  * Example GET Response  
     For URL, http://localhost:8000/block/1
 
   ```
@@ -70,7 +70,7 @@ Example: http://localhost:8000/block/0
   * Status Code
     `200`
 
-  * Example POST Response
+  * Example POST Response  
     For URL, http://localhost:8000/block
 
   ```
