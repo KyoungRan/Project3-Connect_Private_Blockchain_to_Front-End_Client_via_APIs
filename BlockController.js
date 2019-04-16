@@ -41,16 +41,19 @@ class BlockController {
     this.app.get("/block/:blockheight", async (req, res) => {
       try {
         const block = await blockchain.getBlock(req.params.blockheight);
-        console.log('block', block);
-        // res.sendStatus(200)
-        // res.send(block)
         if(block === undefined) {
+          // res.setHeader("Content-Type", "application/json");
           res.status(500).json({
             "status": 500,
             "message": "Block does not exist!"
           });
         } else {
-          res.status(200).json(block);
+          // res.setHeader("Content-Type", "application/json");
+          res.status(200).json({
+            "status": 200,
+            "message": "Success Response",
+            "json": block
+          });
         }
       } catch(err) {
         console.log(err);
@@ -68,30 +71,23 @@ class BlockController {
     postNewBlock() {
         this.app.post("/block", async (req, res) => {
           try {
+            // Check req Validation
             if(req.body.body === '' || req.body.body === undefined) {
               res.status(500).json({
                 "status": 500,
                 "message": "Please fill the body parameter!!"
               })
             } else {
-              await blockchain.addBlock(new Block.Block(req.body.body));
-              let height = await blockchain.getBlockHeight();
-              height = height + 1;
-              let newBlock = await blockchain.getBlock(height);
-              // res.sendStatus(200, newBlock);
-              res.json(newBlock);
+              await blockchain.addBlock(new Block.Block(req.body.body)).then((result) => {
+                // res.setHeader("Content-Type", "application/json");
+                // res.send(JSON.stringify(result));
+                res.status(200).json({
+                  "status": 200,
+                  "message": "Success Response",
+                  "json": result
+                })
+              });
             }
-
-            // await blockchain.addBlock(new Block(req.body.body));
-
-            // const data = new Block.Block(req.body.body);
-            // // console.log(this.blocks.length);
-            // data.height = this.blocks.length;
-            // data.hash = SHA256(JSON.stringify(data)).toString();
-            // // console.log(data, data.height, data.hash);
-            // const block = this.blocks.push(data);
-            // res.sendStatus(200, block)
-            // res.json()
         } catch(err) {
           console.log(err);
         }
@@ -101,16 +97,6 @@ class BlockController {
     /**
      * Help method to inizialized Mock dataset, adds 10 test blocks to the blocks array
      */
-    // initializeMockData() {
-    //     if(this.blocks.length === 0){
-    //         for (let index = 0; index < 10; index++) {
-    //             let blockAux = new BlockClass.Block(`Test Data #${index}`);
-    //             blockAux.height = index;
-    //             blockAux.hash = SHA256(JSON.stringify(blockAux)).toString();
-    //             this.blocks.push(blockAux);
-    //         }
-    //     }
-    // }
     initializeMockData() {
      
       setTimeout(async () => {
