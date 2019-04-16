@@ -13,27 +13,28 @@ To setup the project for review do the following:
 
 ### GET Block Endpoint
 
-	* URL  
-		* `http://localhost:8000/block/[blockheight]`
-		* Example: http://localhost:8000/block/0
+* URL
+  * `http://localhost:8000/block/[blockheight]`
+  * Example: http://localhost:8000/block/0
+  
+* Method
+  * ```GET```
 
-	* Method
-		* ```GET```
-	
-	* Response
-		* Status Code
-			```200```
+* Response
+  * Status Code
+    ```200```
 
-		* json
-
-		```
-		{ 
-			hash:'6b26aa321b48e1cfaa14ce11865d678faf6aaecb0117ed1e20b3217eadbfbf49',
-  		height: 1,
-  		body: 'Test Block - 1',
-  		time: '1555441829',
-  		previousBlockHash': 'd8173439446650d7898a48fec50348ca7887f1cc512715fbcd8d4d462a8a78e2' }
-		```
+  * json
+  
+  ```
+  { 
+    hash:'6b26aa321b48e1cfaa14ce11865d678faf6aaecb0117ed1e20b3217eadbfbf49',
+    height: 1,
+    body: 'Test Block - 1',
+    time: '1555441829',
+    previousBlockHash': 'd8173439446650d7898a48fec50348ca7887f1cc512715fbcd8d4d462a8a78e2' 
+  }
+  ```
 
 ### POST Block Endpoint
 	* URL
