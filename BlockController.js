@@ -78,15 +78,17 @@ class BlockController {
                 "message": "Please fill the body parameter!!"
               })
             } else {
-              await blockchain.addBlock(new Block.Block(req.body.body)).then((result) => {
-                // res.setHeader("Content-Type", "application/json");
-                // res.send(JSON.stringify(result));
+              await blockchain.addBlock(new Block.Block(req.body.body));
+
+              let height = await blockchain.getBlockHeight();
+              // console.log('h', height);
+              let newBlock = await blockchain.getBlock(height);
+              // console.log('n', newBlock);
                 res.status(200).json({
                   "status": 200,
                   "message": "Success Response",
-                  "json": result
+                  "json": newBlock
                 })
-              });
             }
         } catch(err) {
           console.log(err);
