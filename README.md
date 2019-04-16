@@ -19,15 +19,15 @@ To setup the project for review do the following:
 
 * URL
 
-`http://localhost:8000/block/[blockheight]`
+`http://localhost:8000/block/[blockheight]`  
 
 Example: http://localhost:8000/block/0
   
-* Method
+* Method  
   `GET`
 
 * Success Response
-  * Status Code
+  * Status Code  
     `200`
 
   * Example GET Response  
@@ -40,13 +40,15 @@ Example: http://localhost:8000/block/0
     "json":{
       "hash":"9ef23f38b65d44613b0fbdca7656d09cd33a84f6116a0982c6b73a7c28e7c4a0","height":1,
       "body":"Test Block - 1",
-      "time":"1555441819","previousBlockHash":"f8cf7b5a3ebe755d84ff57784a3eaca41b702fde108f62513373a190c73a5464"}}
+      "time":"1555441819","previousBlockHash":"f8cf7b5a3ebe755d84ff57784a3eaca41b702fde108f62513373a190c73a5464"
+    }
+  }
   ```
 
 * Error
-  * Status Code
+  * Status Code  
     `500`
-  * Error Response
+  * Error Response  
 
   ```
   {
@@ -57,17 +59,17 @@ Example: http://localhost:8000/block/0
 
 ### POST Block Endpoint
 
-* URL
+* URL  
   `http://localhost:8000/block`
 
-* Method
+* Method  
   `POST`
 
-* Required Params
+* Required Params  
   `body` parameter
 
 * Success Response
-  * Status Code
+  * Status Code  
     `200`
 
   * Example POST Response  
@@ -88,9 +90,9 @@ Example: http://localhost:8000/block/0
   ```
 
 * Error
-  * Status Code
+  * Status Code  
     `500`
-  * Error Response
+  * Error Response  
 
   ```
   {
